@@ -1,94 +1,43 @@
 # SkillMatrix – Employee Qualification & Performance Management System
 
-Suntem 3 studenți și lucrăm împreună la acest proiect, în cadrul unei activități de echipă. Scopul nostru este să dezvoltăm o aplicație utilă pentru gestionarea calificărilor, polivalenței și performanței angajaților în medii industriale și logistice.
+Proiect realizat de 3 studenți pentru gestionarea calificărilor, polivalenței și performanței angajaților în medii industriale și logistice.
 
-## Update-uri curente
+## Obiective
 
-Până acum am realizat următoarele:
-
-- Am definit obiectivele generale și specifice ale aplicației.
-- Am elaborat documentația principală: **SRD**, **SRS**, scenarii de test, rezultate intermediare, activități pe roluri și grafic de implementare.
-- Am implementat un MVP funcțional în **Python/Streamlit + SQLite**, care include:
-  - configurare departamente/celule/stații;
-  - profiluri angajați;
-  - matrice skill-uri, evaluări, cerințe stații și planuri de instruire;
-  - alocare operatori cu verificare eligibilitate și override justificat;
-  - monitorizare performanță (ore, output, rebuturi) și dashboard KPI/grafice;
-  - import/export CSV/TXT/JSON;
-  - autentificare, roluri de acces și audit log.
-- Am adăugat teste automate de bază și am verificat funcționalitățile MVP.
-
-## Descriere
-
-Aplicație MVP pentru gestionarea calificărilor, polivalenței și performanței angajaților, adaptabilă mediilor industriale și logistice.
-
-## Obiective acoperite
-
-- Configurare departamente, celule și stații.
-- Profiluri individuale angajați.
-- Repartizare operatori pe stații în funcție de calificări (cu verificare eligibilitate și override justificat).
-- Monitorizare timp lucrat, productivitate și calitate.
-- Dashboard cu grafice și statistici.
-- Evaluare calificări, polivalență și progres instruire.
-- Import manual/CSV/TXT/JSON și export CSV.
-- Administrare utilizatori și drepturi de acces (RBAC) + audit log.
+- Configurarea departamentelor, celulelor și stațiilor.
+- Crearea și gestionarea profilurilor angajaților.
+- Repartizarea operatorilor pe stații în funcție de calificări.
+- Monitorizarea timpului de lucru, productivității și calității.
+- Vizualizarea performanței prin grafice și statistici.
+- Evaluarea calificărilor, polivalenței și progresului de instruire.
+- Import manual sau din fișiere CSV, TXT, JSON.
+- Administrarea utilizatorilor și a drepturilor de acces.
 
 ## Structură proiect
 
 ```text
 .
-├── app.py                      # UI Streamlit (SkillMatrix)
-├── skillmatrix_db.py           # Schema SQLite + interogări + logică business
-├── skillmatrix_auth.py         # Autentificare, hash parole, RBAC
-├── skillmatrix_import.py       # Parser/validare CSV/TXT/JSON
+├── app.py                      # Aplicația Streamlit
+├── skillmatrix_db.py           # Bază de date SQLite și logică business
+├── skillmatrix_auth.py         # Autentificare și roluri
+├── skillmatrix_import.py       # Import CSV/TXT/JSON
 ├── requirements.txt
 ├── run.bat
-├── docs/
-│   ├── Obiective.md
-│   ├── SRD.md
-│   ├── SRS.md
-│   ├── Scenarii_Test.md
-│   ├── Rezultate_Intermediare.md
-│   ├── Activitati_Roluri.md
-│   └── Grafic_Implementare.md
+├── docs/                       # Documentație proiect
 └── tests/
     └── test_skillmatrix.py
 ```
 
-## Instalare (Windows / PowerShell)
+## Instalare și rulare
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-```
-
-## Rulare
-
-```powershell
-.\run.bat
-```
-
-sau
-
-```powershell
 python -m streamlit run app.py
 ```
 
-## Cont implicit MVP
-
-- **Utilizator:** `admin`
-- **Parolă:** `admin123`
-
-> Schimbă parola implicită pentru orice utilizare reală.
-
-## Import date
-
-Formate acceptate: `.csv`, `.txt`, `.json`.
-
-Entități suportate: departamente, celule, stații, angajați, skill-uri, skill-uri angajați, cerințe stații, alocări, loguri performanță, planuri instruire.
-
-Importul validează câmpurile obligatorii și raportează erorile pe rând. Datele sunt importate în SQLite (`skillmatrix.db`).
+Cont implicit MVP: `admin` / `admin123`
 
 ## Teste
 
@@ -96,26 +45,6 @@ Importul validează câmpurile obligatorii și raportează erorile pe rând. Dat
 python -m unittest discover -s tests -v
 ```
 
-## Documentație livrabilă
+## Documentație
 
-Documentele cerute se află în folderul `docs/`:
-- Obiective generale și specifice
-- SRD & SRS
-- Scenarii de test
-- Rezultate intermediare
-- Activități pe roluri
-- Grafic de implementare
-
-## Publicare pe GitHub
-
-Repo-ul local este pregătit pentru commit. Pentru publicare într-un repo nou:
-
-```powershell
-git add .
-git commit -m "Add SkillMatrix MVP and documentation"
-# creează un repo gol pe GitHub, apoi:
-git remote add skillmatrix https://github.com/<user>/SkillMatrix.git
-git push -u skillmatrix HEAD:main
-```
-
-Dacă vrei să folosești remote-ul existent, înlocuiește URL-ul corespunzător. Verifică înainte de push că nu suprascrii un proiect diferit.
+În folderul `docs/` se găsesc: Obiective, SRD, SRS, Scenarii de test, Rezultate intermediare, Activități pe roluri, Grafic de implementare.
