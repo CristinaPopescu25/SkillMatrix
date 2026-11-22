@@ -1,5 +1,25 @@
 # SkillMatrix – Employee Qualification & Performance Management System
 
+Suntem 3 studenți și lucrăm împreună la acest proiect, în cadrul unei activități de echipă. Scopul nostru este să dezvoltăm o aplicație utilă pentru gestionarea calificărilor, polivalenței și performanței angajaților în medii industriale și logistice.
+
+## Update-uri curente
+
+Până acum am realizat următoarele:
+
+- Am definit obiectivele generale și specifice ale aplicației.
+- Am elaborat documentația principală: **SRD**, **SRS**, scenarii de test, rezultate intermediare, activități pe roluri și grafic de implementare.
+- Am implementat un MVP funcțional în **Python/Streamlit + SQLite**, care include:
+  - configurare departamente/celule/stații;
+  - profiluri angajați;
+  - matrice skill-uri, evaluări, cerințe stații și planuri de instruire;
+  - alocare operatori cu verificare eligibilitate și override justificat;
+  - monitorizare performanță (ore, output, rebuturi) și dashboard KPI/grafice;
+  - import/export CSV/TXT/JSON;
+  - autentificare, roluri de acces și audit log.
+- Am adăugat teste automate de bază și am verificat funcționalitățile MVP.
+
+## Descriere
+
 Aplicație MVP pentru gestionarea calificărilor, polivalenței și performanței angajaților, adaptabilă mediilor industriale și logistice.
 
 ## Obiective acoperite
